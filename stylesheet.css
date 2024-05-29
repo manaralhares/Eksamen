@@ -1,0 +1,718 @@
+/*generelt for hele siden. Alle mine HTMl elemer påvirkes af de stilarter der er inde for {}*/
+* {
+    margin: 0; /* alt margin er 0 dvs. alt standard ydren afstand fjernes, tænk box model */
+    padding: 0; /*fjerne alt indre mellemrum mellem som browseren automatisk bruger, tænk box model*/
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*body indeholder alt indholde på hjemmesiden*/
+body {
+    width: 100%; /*body elementet strækker sig over hele bredden af vinduet */
+    background-color: #B3AB9C; /*baggrundfarve*/
+}
+
+/* banner */
+nav {
+    width: 100%;
+    height: 100px;
+    background-color: #786E45;
+    position: fixed; /* Fixes den så den bliver oppe over elementerne */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* sikre at den bliver oppe over elementerne */
+}
+
+
+/* ================FORSIDE================= */
+
+.logo {
+    width: 60px;
+    height: auto; /* sørger for at højden tilpasses proportionalitet*/
+    position: fixed; /*  Fixes logoet at the top*/
+    top: 0; /* placering øverst*/
+    left: 20px; /* placering til venstre*/
+    margin-top: 20px;
+    z-index: 1001; /* har en større z-index end nav så det er synligt */
+}
+
+
+/* forsidebillede */
+.forsidebillede {
+    width: 100%;
+    margin-top: 15%;
+}
+
+/*herfra og resten af forsiden bliver der brugt Flexible Box Layout*/
+
+/*for tablets, pc og større enheder*/
+@media only screen and (min-width: 768px) { 
+    .flex-container {          /*felx conatiner bruges her*/
+    display: flex;             /*Ved at bruge display flex bliver containeren fleksibel også 
+                                kan man bruge flex properties */
+    justify-content: flex-end; /*flex-property Placerer indholdet til højre */
+    }
+    
+    .forsidebillede {
+        flex: 1; /* Fyld lige så meget plads som muligt */
+        max-width: 50%; /* Begræns bredden til halvdelen af skærmen */
+        margin-top: -310px;
+    }
+}
+
+
+.manaralhares {
+    display: flex;            /*Ved at bruge display flex bliver containeren fleksibel også 
+                              kan man bruge flex properties */
+    justify-content: center;  /*flex-property - horiontal centering*/
+    align-items: center;      /*flex-property - vertikal centering*/
+    margin-top: 150px         /* rykker teksten ned*/
+}
+
+/* Tekst på forside - for tablets, pc og større enheder*/
+@media only screen and (min-width: 768px) {
+    .manaralhares {
+        display: flex;               /*fleksibel container - flex properties bruges*/  
+        justify-content: flex-start; /*flex-property - Juster teksten til venstre */
+        align-items: center;         /*flex-property Centrer den vertikalt */
+        margin-top: 200px;           /* Rykker teksten ned */
+        margin-left: 100px;           /* Juster margen til venstre */
+        font-size: 30px;
+    } 
+}
+
+.overskrift {
+    display: flex;             /*fleksibel container -flex properties bruges*/
+    justify-content: center;  /*flex-property - horiontal centering*/
+    align-items: center;      /*flex-property - vertikal centering*/
+    margin-top: 0px;         /*rykker teksten ned*/
+    font-weight: bold;
+    font-size: 40px; 
+}
+
+/* Overskrift på forside- for tablets, pc og større enheder*/
+@media only screen and (min-width: 768px) {
+    .overskrift {
+        display: flex;                /*fleksibel container -flex properties bruges*/
+        justify-content: flex-start; /*flex-property - Juster teksten til venstre */
+        align-items: center;         /*flex-property - Centrer den vertikalt */
+        margin-top: 20px;           /*flex-property - Rykker teksten ned */
+        margin-left: 100px;           /* Juster margen til venstre */
+        font-size: 65px;
+    } 
+}
+
+
+.underoverskrift {
+    display: flex;            /*fleksibel container -flex properties bruges*/
+    justify-content: center;  /*flex-property- horiontal centering*/
+    align-items: center;      /* vertikal centering*/
+    margin-top: 20px;         /* rykker teksten ned*/
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .underoverskrift{
+        display: flex;               /*fleksibel container -flex properties bruges*/
+        justify-content: flex-start; /*flex-property - Juster teksten til venstre */
+        align-items: center;         /* Centrer den vertikalt */
+        margin-top: 0;               /* Rykker teksten ned */
+        margin-left: 100px;          /* Juster margen til venstre */
+        font-size: 28px;
+    } 
+}
+
+
+.farvetlinje {
+    width: 100%;
+    height: 4px;
+    background-color: #786E45;
+    margin: 50px 0;
+}
+
+/*media farvet linje er rykket ned til bunden, ellers forsvinder den:(*/
+
+/*=======================================OM MIG SIDEN========================================*/
+
+.ommig {
+    margin-top: 50px;                /*det ydre mellemrum omkring elementet*/
+    font-size: 40px;
+    font-weight: bold;
+    padding: 20px 20px 20px;         /*rydder området omkring indholdet (indvendig afstand)*/
+}
+
+/*om mig overskrift på pc*/
+@media only screen and (min-width: 768px) {
+    .ommig{
+        display: flex;               /*fleksibel container -flex properties bruges*/
+        justify-content: flex-start; /* flex-property - Juster teksten til venstre */
+        align-items: center;         /*flex-property - Centrer den vertikalt */
+        margin-top: 50px;            /*Rykker teksten ned */
+        margin-left: 80px;           /* Juster margen til venstre */
+        font-size: 50px;
+    } 
+}
+
+
+.ommigunderoverskrift {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 20px 20px;          /*rydder området omkring indholdet (indvendig afstand)*/
+    margin-top: -30px;
+}
+
+/*om mig UNDERoverskrift på pc*/
+@media only screen and (min-width: 768px) {
+    .ommigunderoverskrift{
+        display: flex;               /*fleksibel container -flex properties bruges*/
+        justify-content: flex-start; /*flex-property -  Juster teksten til venstre */
+        align-items: center;         /*flex-property -  Centrer den vertikalt */
+        margin-top: -40px;           /* Rykker teksten ned */
+        margin-left: 80px;           /* Juster margen til venstre */
+        font-size: 28px;
+    } 
+}
+
+.omgmigbrødtekst {
+    font-size: 20px;
+    padding: 50px 20px 20px;          /*rydder området omkring indholdet (indvendig afstand)*/
+    margin-left: 0px;
+    line-height: 30px;                /*linje-mellemrum mellem linjerne for bedre læsebarhed*/
+}
+
+.omgmigbillede{
+    width: 50%;
+    object-fit: cover;                /*en egenskab så billede(video)elementer passer ind højre og breddemessigt
+                                      cover; så billedet fylder alle rammer uden at ændre proportioner*/
+}
+
+/*CSS GRID til at få billede og brødteksttekst til at stå ved siden af hinanden*/
+/*om mig brødtekst og billede på pc*/
+@media only screen and (min-width: 768px) {
+    .ommig-sektion {
+        display: grid;                  /*grid container - brøne elementer placeres i gitterlayout*/
+        grid-template-columns: 1fr 1fr; /*grid-property - definere nummeret af koloner to lige store koloner*/
+        align-items: start;             /*grid-property - lodret justering*/
+        gap: 20px;                      /*afstand mellem tekst og billede i grid-layout*/
+    }
+}
+
+/*mere stil/layout til brødtekst på pc*/
+@media only screen and (min-width: 768px) {
+    .omgmigbrødtekst {
+       margin-left: 80px;
+       font-size: 25px;
+       line-height: 1.6;
+    }
+}
+
+/*mere stil/layout til billede på pc*/
+@media only screen and (min-width: 768px) {
+    .img {
+        max-width: 100%;   /*så billedet ikke bliver større end dens container*/
+        max-height: 100%;  /*så billedet ikke bliver højere end dens conttiner*/
+    }
+
+    .ommigpic{
+       flex: 1;            /*for at fylde det tilgængelig rum i son flex container*/
+       objekct-fit: cover; /*så billedet tilpasses containeren -  Sørger for, at 
+                            billedet dækker hele containeren, mens det bevarer dets proportioner.*/
+    }
+}
+
+.farvetlinje {
+    width: 100%;
+    height: 4px;
+    background-color: #786E45;
+    margin: 30px 0;
+}
+
+/*============================PROJEKTER SIDEN===============================*/
+.projekter {
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px 20px 20px;     /*rydder området omkring indholdet (indvendig afstand)*/
+    margin-left: 0px;
+}
+
+/*projekter overskrift på pc*/
+@media only screen and (min-width: 768px) {
+    .projekter {
+        margin-left: 80px;
+    }
+}
+
+/*styling af underoverskriften*/
+.udvalg {
+    font-size: 20px;
+    padding: 20px 20px 20px;
+    margin-top: -30px;
+    font-weight: bold;
+}
+
+/*styling af underoverskriften på pc*/
+@media only screen and (min-width: 768px) {
+    .udvalg {
+        margin-left: 80px;
+        font-size: 28px;
+    }
+}
+
+/* fordi mine billeder ikke gider respektere mine width og height uden den her (malplaceret)*/
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/*======projekter listet op=======*/
+/*OPS - projekterne blev først lavet til pc*/
+#projekter {              /*læg mærke til du kalder på en id her*/
+    padding: 50px 50px;
+}
+
+.work-list {                                   /*work-list fungere som et gitter-layout*/
+    display: grid;                            /*grid container - brøne elementer placeres i gitterlayout*/
+    grid-template-columns: repeat(3, 1fr);    /*grid-property - definere nummeret af koloner to lige store koloner*/
+    grid-gap: 40px;                           /*grid-property - sørger for der er mellemrum mellem projekterne*/
+    margin-top: 50px;
+}
+
+.work {                                       /*hvert projekt i html fik en class="work" og her styler jeg dem*/
+    border-radius: 10px;                      /*blødere og rundere kant*/
+    position: relative;                       /*relatviv position - kan justeres i forhold til normal position*/
+    overflow: hidden;                         /*skjuler alt indhold der strækker sig ud over elementes grænser*/
+    width: 100%;                              /*sørger for at fylde hele containeren*/
+    display: flex;                            /*fleksibel container -flex properties bruges*/
+    flex-direction: column;                   /*flex-property -  Centrer den vertikalt */
+    justify-content: center;                  /*flex-property -  Centrer den vertikalt */
+    align-items: center;                      /*flex-property -  Centrer den vertikalt */
+}
+
+.work img {                                   /*inden for hver af classen work har jeg sat et billede og her styler jeg dem*/
+    width: 100%;                              /*bredde*/
+    border-radius: 10px;                      /*blødere og rundere kant*/
+    display: block;                           /*billedet tager hele bredden af sin container*/
+    transition: transform 0.5s;               /*angivet tid til transformering til når billeddet ændre sig*/
+}
+
+.layer {
+    width: 100%;                             /*bredde*/
+    height: 0;                               /*højden er 0, jeg skjuler laget indtil en bestemt handling */
+    background: linear-gradient(rgba(0,0,0,0.6), #191716);  /*skaber en gradient-effekt, ændres fra semitransparet til sort*/
+    border-radius: 10px;                      /*blødere og rundere kant*/
+    position: absolute;                       /*absolut placering i forhold til nærmeste positionerede forfader*/
+    left: 0;                                  /*laget placeres ved den venstre kant af containeren*/
+    bottom: 0;                                /*laget placeres ved bunden af containeren*/
+    overflow: hidden;                         /*skjuler eventuelt indhold, der rager ud over lagets grænse*/
+    display: flex;                            /*fleksibel container -flex properties bruges*/
+    align-items: center;                      /*flex property*/
+    justify-content: center;                  /*flex property*/
+    flex-direction: column;                   /*flex property*/
+    text-align: center;                       /*flex property*/
+    font-size: 14px;
+    transition: height 0.5s;                  /*angivet tid til transformering til når laget ændre sig*/
+    color: #B3AB9C;
+}
+
+.layer h2 {                                   /*her styler vi h2 elementerne, overskrifterne på projekterne*/
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.work:hover img {                             /*hover effekten over projekt billederne*/
+    transform: scale(1.1);                    /*transform-funktion der skalere elementet, skalere det til 100% af dens oprindelig størrelse*/
+}
+
+.work:hover .layer {                          /*styler layer med hover*/
+    height: 100%;
+    color: #B3AB9C;
+}
+
+.work.easynew img {                            /*styler easynews app billedet da de ikke matcher med de andre */
+    height: 550px;                             /* højde for at matche de andre billeder */
+    object-fit: cover;                         /* Sørger for at billedet passer inden for containeren uden at ændre proportionerne */
+}
+
+/*easynews på pc*/
+@media only screen and (min-width: 768px) {
+    .work.easynew img {
+        height: 790px;                             /* højde for at matche de andre billeder */
+        object-fit: cover;                         /* Sørger for at billedet passer inden for containeren uden at ændre proportionerne */
+    }
+}
+
+
+.farvetlinje { 
+    width: 100vw;
+    height: 10px;
+    background-color: #786E45;
+    margin: 0;
+    position: relative;                        /*relative betyder, at elementet er positioneret i forhold til dets normale position*/
+    left: 50%;
+    transform: translateX(-50%);               /*flytter elementet 50% af dets egen bredde til venstre. */
+}
+
+
+
+/* Projekter på telefon */
+@media only screen and (max-width: 480px){
+    .work-list{
+        grid-template-columns: 1fr;            /* betyder, at grid-layoutet vil have en enkelt kolonne, der fylder hele bredden.*/
+        grid-gap: 20px;
+        margin-top: 30px;
+    }
+    .layer {
+        font-size: 12px;
+        padding: 0 20px;                       /*tilføjer indvendig afstand på 0 pixels øverst og nederst, og 20 pixels til venstre og højre.*/
+        text-align: center;                    /*centere teksten horisontalt*/
+        align-items: center;                   /*centere elementerne virtikalt*/
+        justify-content: center;               /*centrerer elementerne horisontalt,*/
+        position: absolute;                    /*placerer elementet relativt til dets nærmeste positionerede forælder*/
+    }
+    .layer h2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+}
+
+/*farvetlinje*/
+@media only screen and (min-width: 768px) {
+    .farvetlinje{
+    width: 100%;
+    height: 10px;
+    background-color: #786E45;
+    margin: 0px 0;
+    } 
+}
+
+
+/*================================MENU=====================================*/
+
+/*menu på pc*/
+@media only screen and (min-width: 768px) {
+    .menupc {
+        display: block;                            /*ændrer elementets visning til blok-niveau, hvilket betyder, at det tager hele bredden til rådighed og starter på en ny linje*/
+        margin-left: 1000px;                        /*så menuen rykker sig til højre side*/
+    }
+
+    .menupc li {
+        list-style: none;                           /*fjerner standard listepunkterne*/
+        display: inline-block;                      /*elementerne vises på linje men opfører sig stadig som blokke*/
+        float: left;                                /*elementerne flyder til venstre og vises ved siden af hinanden*/
+        line-height: 100px;                         /*centere linjen vertikalt ved en linje højde på 100px*/
+    }
+
+    .menupc li a {
+        display: block;                             /*ændre vises til block niveau så linknet fylder helke containeren*/
+        text-decoration: none;                      /*fjerner standard understregningen på links*/
+        font-size: 18px;    
+        font-family: Arial, Helvetica, sans-serif;
+        color: #121212;
+        font-weight: bold;
+        padding: 0 20px;
+    }
+
+    .menupc li a:hover {
+        color: #B8CCDD;
+    }
+
+}
+
+/*MENU PÅ TELEFON*/
+@media only screen and (max-width: 767px) {
+    .menupc {
+        display: block; 
+    }
+
+    .menupc li {
+        list-style: none;
+        display: inline-block;
+        float: right;               /*får elementerne til at flyde til højre, så de vises ved siden af hinanden fra højre mod venstre.*/
+        line-height: 100px;
+    }
+
+    .menupc li a {
+        display: block;
+        text-decoration: none;
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #121212;
+        font-weight: bold;
+        padding: 0 10px;
+    }
+
+    .menupc li a:hover {
+        color: #B8CCDD;
+    }
+}
+
+
+/*=================================KONTAKT MIG SIDEN================================*/
+
+.kontaktmig {
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px 20px 20px;
+    margin-left: 0px;;
+}
+
+/*til pc*/
+@media only screen and (min-width: 768px) {
+    .kontaktmig {
+        margin-left: 80px;
+    }
+}
+
+.pitch {  
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 20px 20px 20px;
+    margin-top: -30px;
+    font-weight: bold;
+}
+
+/*på pc*/
+@media only screen and (min-width: 768px) {
+    .pitch {
+        margin-left: 80px;
+        font-size: 28px;
+    }
+}
+
+.form-container {
+    display: flex;                 /*fleksibel container -flex properties bruges flex-property*/ 
+    flex-direction: column;        /*flex-property */
+    align-items: center;            /*flex-property */
+    padding: 20px;
+}
+
+/* til pc */
+@media only screen and (min-width: 768px) {
+    .form-container {
+        flex-direction: row;              /*flex-property */
+        justify-content: space-between;   /*flex-property */
+        max-width: 850px;
+                     /* Centere containeren */
+        transform: translateX(15px);    /* Rykker containeren mod venstre */
+        margin-left: 250px;
+    }
+    
+    .findmigher, .form-content {
+        width: 90%; /*hver sektion tager halvdelen af containerens bredde */
+    }
+    
+    .findmigher {
+        font-size: 28px;
+        margin-left: 80px;
+        margin-right: 0px;
+        width: 30%; /* rykker findmigher mod højre*/
+        margin-top: -60px;
+    }
+
+    .form-content {
+        width: 70%;
+        margin-left: -22%;
+        margin-bottom: 90px;
+    }
+}
+
+/* styling af input og tekstareal*/
+input, textarea {
+    background-color: white;
+    width: 100%;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid rgb(255, 255, 255);      /*Sætter en 1 pixel bred kant (border) med en solid hvid farve */
+    margin-bottom: 20px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #5bd183;
+    border-width: 3px;  
+}
+
+/* Button styling */
+button {
+    background-color: #B8CCDD;
+    border-radius: 20px;
+    border: 1px solid rgb(90, 89, 89);
+    font-size: 20px;
+    padding: 10px 18px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+}
+
+button:hover {
+    opacity: 80%;
+    cursor: pointer;
+}
+
+
+/*============= Flex container for ikon and text ==============*/
+.logotekst-container {
+    display: flex;
+    flex-direction: column; /* ikon-tekst arrengeres i par i en kolonne */
+    gap: 50px;
+}
+
+/*=========== flex container for hvert icon-tekst par ===============*/
+.icon-tekst {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.minipitch {
+    margin-bottom: 70px; /* minipitch op */
+    font-weight: bold; 
+    font-size: 25px;
+}
+
+.findmigher {
+    margin-top: -px;
+}
+
+/*============KONTAKT-FORMULAR MIG PÅ MOBIL==============*/
+/* til telefon*/
+@media (max-width: 768px) {
+    .form-container {
+        margin-left: -20px;
+    }
+    
+    .form-content {
+        max-width: 90%; 
+        padding: 15px; /* reducering af padding */
+    }
+    
+    input, textarea {
+        font-size: 14px; 
+        padding: 10px; /* reducering af padding */
+
+    button {
+        font-size: 16px; 
+        padding: 8px 12px;  /* reducering af padding */
+    }
+}
+}
+
+/* til mobil */
+@media (max-width: 768px) {
+    .findmigher {
+        display: none;
+    }
+}
+
+
+/*==================FOOTER=============*/
+.footer {
+    width: 100%;
+    background-color: #786E45;
+    padding: 20px;
+    color: black;
+    position: relative; /* Sørger for at footer kan positioneres relativt */
+    box-sizing: border-box; /*indkludere padding og border i elementets sammelde bredde*/
+    overflow: hidden;
+}
+
+/* Containeren for alt indhold i footeren */
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Arrangerinf af indholdet i en kolonne */
+    align-items: center; /* Centrerering af indholdet horisontalt */
+    justify-content: center; /* Centrerering indholdet vertikalt */
+    height: 100%; /* Sørger for at indholdet fylder hele højden af footeren */
+}
+
+/* Sektionerne inden i footeren */
+.footer-sektion {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Tekstcontaineren inden i sektionerne */
+.footer-tekst-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Plads mellem elementer inden i containeren */
+}
+
+/* Kontakt mig styling */
+.kontaktmigfooter {
+    font-size: 15px;
+    padding: 20px;
+    margin-top: -30px;
+    font-weight: bold;
+}
+
+/*pc størrelse*/
+@media only screen and (min-width: 768px) {
+    .kontaktmigfooter {
+        font-size: 20px;
+        margin-left: 50px;
+    }
+}
+
+/* Manar Al-Hares styling */
+.manarfooter {
+    font-size: 14px;
+    padding: 20px;
+    margin-top: -30px;
+    font-weight: lighter;
+}
+
+/*pc størrelse*/
+@media only screen and (min-width: 768px) {
+    .manarfooter {
+        font-size: 20px;
+        margin-left: 50px;
+    }
+}
+
+/* Info styling */
+.infofooter {
+    font-size: 14px;
+    padding: 20px;
+    margin-top: -30px;
+    font-weight: lighter;
+}
+
+/*pc størrelse*/
+@media only screen and (min-width: 768px) {
+    .infofooter {
+        font-size: 20px;
+        margin-left: 45px;
+    }
+}
+
+/* Kopisymbol styling */
+.kopisymbol {
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    position: absolute; /* Sørger for at placere elementet absolut i footer */
+    bottom: 10%; /* Placering elementet i bunden af footer */
+    width: 100%; /* Sørger for at teksten bliver centreret */
+}
+
+/*til telefon*/
+@media only screen and (max-width: 767px) {  
+.footer-content {
+    align-items: center; /* Center content horizontally on small screens */
+}
+
+.kontaktmigfooter, .manarfooter, .infofooter {
+    text-align: center; /* Center text on small screens */
+}
+
+.kopisymbol {
+    font-size: 14px;
+    position: static; /* Remove absolute positioning for better centering */
+    margin-top: 20px; /* Add some spacing from the top */
+}
+} 
