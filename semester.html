@@ -14,7 +14,7 @@
     </head>
     <body>
  <!--menu, som kommer på pc-->
-        <nav> 
+        <nav>    <!--med "nav difinerer jeg navigationen på hjemmesiden, dvs. menuen"-->
          <ul class="menupc">
              <li><a href="#hjem">Hjem</a></li>
              <li><a href="#om-mig">Om mig</a></li>
@@ -25,10 +25,13 @@
 
    <!--logo-->
    <img src="logo/logo.png" alt="billede af bogstavet m med blade på" class="logo">
+   <!--"src" er stien til billedefilen mens "alt" beskriver billedet hvis det ikke kan ses-->
 
 <!-------------------------------FORSIDE----------------------------------------->        
         <section id="hjem"> <!--her opdeler jeg mine menupunkter i sektioner, 
-            alt indhold under hjem ses når der trykkes på hjem -->
+            alt indhold under hjem ses når der trykkes på hjem. Med sektion gruppere vi indhold sammen, der har samme overskrift.-->
+            <!--Id attributtet bruges til at linke til et andet sted på samme side (interne links), 
+            id er et unikt navn for det pågældende element -->
             <div class="manaralhares"> <!--her begynder indholdet på min forside-->
                 <h1>Manar Al-Hares</h1>
             </div>
@@ -175,6 +178,7 @@
                         <span><i class="telefonnummer"></i> &nbsp; +45 50 40 25 57</span>
                         <br>
                         <span><i class="minemail"></i> &nbsp; Manaralhares9@gmail.com</span>
+                        <!--&nbsp(none breaking space) et mellemrum der ikke ind i en ny linje -->
                     </div>
                 </div>
             </div>
